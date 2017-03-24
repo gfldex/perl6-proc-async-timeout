@@ -1,6 +1,6 @@
 use v6.c;
 
-class X::Proc::Async::Timeout is Exception is export {
+class X::Proc::Async::Timeout is Exception {
     has $.command;
     has $.seconds;
     method message {
