@@ -16,6 +16,13 @@ await $s.start: timeout => 2;
 # OUTPUT: ⟨sleep⟩ timed out after 2 seconds.
 ```
 
+## Methods
+
+Proc::Async::Timeout.start(:$timeout, |c --> Promise:D)
+
+Executes the stored command and sets a timeout. All additional arguments are
+forwarded to `Proc::Async.start`.
+
 ## LICENSE
 
 All files (unless noted otherwise) can be used, modified and redistributed
