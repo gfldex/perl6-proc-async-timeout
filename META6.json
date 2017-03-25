@@ -1,8 +1,7 @@
 {
   "name": "Proc::Async::Timeout",
-  "source-url": "https://github.com/gfldex/perl6-proc-async-timeout",
   "support": {
-    "source": null
+    "source": "https://github.com/gfldex/perl6-proc-async-timeout"
   },
   "emulates": {
     
