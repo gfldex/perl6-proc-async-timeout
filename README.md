@@ -13,7 +13,17 @@ use Proc::Async::Timeout;
 my $s = Proc::Async::Timeout.new('sleep', '1m');
 
 await $s.start: timeout => 2;
-# OUTPUT: ⟨sleep⟩ timed out after 2 seconds.
+
+CATCH { 
+    when X::Proc::Async::Timeout {
+        say "cought: ", .^name;
+        say "reporting: ", .Str;
+    }
+}
+
+# OUTPUT:
+# cought: X::Proc::Async::Timeout+{X::Promise::Broken}
+# reporting: ⟨sleep⟩ timed out after 2 seconds.
 ```
 
 ## Methods
@@ -21,7 +31,8 @@ await $s.start: timeout => 2;
 Proc::Async::Timeout.start(:$timeout, |c --> Promise:D)
 
 Executes the stored command and sets a timeout. All additional arguments are
-forwarded to `Proc::Async.start`.
+forwarded to `Proc::Async.start`. If the timeout is hit before the command
+finished `X::Proc::Async::Timeout` is thrown.
 
 ## LICENSE
 
