@@ -14,7 +14,7 @@ class Proc::Async::Timeout is Proc::Async is export {
         start {
             await my $outer-p = Promise.anyof(my $p = parent-start-method(self, |c), Promise.at(now + $timeout));
             if $p.status != Kept {
-                self.kill;
+                self.kill(signal => 'KILL');
                 fail X::Proc::Async::Timeout.new(command => self.path, seconds => $timeout);
             }
         }
