@@ -36,11 +36,12 @@ CATCH {
 
 ## Methods
 
-Proc::Async::Timeout.start(:$timeout, |c --> Promise:D)
+Proc::Async::Timeout.start(:$timeout = Inf, |c --> Promise:D)
 
 Executes the stored command and sets a timeout. All additional arguments are
 forwarded to `Proc::Async.start`. If the timeout is hit before the command
-finished `X::Proc::Async::Timeout` is thrown.
+finished `X::Proc::Async::Timeout` is thrown. Setting `:timeout` to `Inf` will
+never throw.
 
 ## LICENSE
 
