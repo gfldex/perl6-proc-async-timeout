@@ -3,7 +3,7 @@
 Run a command asynchronos with a timeout. When the timeout is hit
 `X::Proc::Async::Timeout` is thrown and the command is killed.
 
-[![Build Status](https://travis-ci.org/gfldex/perl6-proc-async-timeout.svg?branch=master)](https://travis-ci.org/gfldex/perl6-proc-async-timeout)
+[![Build Status](https://travis-ci.org/gfldex/raku-proc-async-timeout.svg?branch=master)](https://travis-ci.org/gfldex/raku-proc-async-timeout)
 
 ## SYNOPSIS
 
