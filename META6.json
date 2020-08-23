@@ -1,5 +1,6 @@
 {
   "name": "Proc::Async::Timeout",
+  "source-url": "https://github.com/gfldex/raku-proc-async-timeout.git",
   "support": {
     "source": "https://github.com/gfldex/raku-proc-async-timeout.git",
     "bugtracker": "https://github.com/gfldex/raku-proc-async-timeout/issues"
