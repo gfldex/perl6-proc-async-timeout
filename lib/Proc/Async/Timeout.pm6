@@ -19,6 +19,7 @@ class Proc::Async::Timeout is Proc::Async is export {
                     self.kill(signal => Signal::SIGKILL);
                     fail X::Proc::Async::Timeout.new(command => self.path, seconds => $timeout);
                 }
+                $p.result
             }
     }
 }
