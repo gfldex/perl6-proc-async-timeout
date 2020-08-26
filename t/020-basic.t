@@ -7,7 +7,7 @@ plan 2;
 
 use Proc::Async::Timeout;
 
-my $s = Proc::Async::Timeout.new('sleep', '1m');
+my $s = Proc::Async::Timeout.new('sleep', '60');
 
 throws-like { await $s.start: timeout => 1 }, X::Proc::Async::Timeout, 'timeout hit';
 
